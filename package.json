@@ -1,0 +1,25 @@
+{
+  "name": "ssl-notify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "moment": "^2.21.0",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.3",
+    "pug": "^2.0.3",
+    "ssl-checker": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

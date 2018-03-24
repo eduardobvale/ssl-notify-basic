@@ -1,0 +1,32 @@
+html
+    head
+        title Checker
+        meta(charset='utf8')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css')
+        style
+            include home.css
+    body
+        section(class='hero is-dark')
+            div(class='hero-body')
+                div(class='container')
+                    h1(class='title has-text-centered') SSL CHECKER
+        section(class='section')
+            div(class='container is-centered')
+                table(class='table is-fullwidth is-bordered')
+                    thead
+                        tr
+                            td.has-text-centered Host
+                            td.has-text-centered Data Inicial
+                            td.has-text-centered Data Final
+                            td.has-text-centered Tempo Restante
+                    tbody
+                        each val in host
+                            tr
+                                td=val.host
+                                td=val.valid_from
+                                td=val.valid_to
+                                td=`${val.days_remaining} dias`
+                button(class='button is-link' href='/all') Refresh
+                
+                    
