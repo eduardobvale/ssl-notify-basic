@@ -17,16 +17,16 @@ html
                     thead
                         tr
                             td.has-text-centered Host
+                            td.has-text-centered Dias Restantes
                             td.has-text-centered Data Inicial
                             td.has-text-centered Data Final
-                            td.has-text-centered Tempo Restante
                     tbody
                         each val in host
                             tr
                                 td=val.host
+                                td=`${val.days_remaining} dias`
                                 td=val.valid_from
                                 td=val.valid_to
-                                td=`${val.days_remaining} dias`
                 button(class='button is-link' href='/all') Refresh
                 
                     

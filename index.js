@@ -5,6 +5,7 @@ const path = require('path')
 const moment = require('moment')
 const sslChecker = require('ssl-checker')
 const nodemailer = require('nodemailer')
+const fs = require('fs')
 const app = express()
 
 /*Middlewares*/
@@ -17,8 +18,8 @@ app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'public'))
 
 /*Routes*/
-const options = ["GET", 443]
-const hosts = [""]
+const options = ["HEAD", 443]
+const hosts = JSON.parse(fs.readFileSync('domains.json', 'utf8'))
 
 async function checkSsl() {
   const checkedSsl = await Promise.all(hosts.map(async host => { 
@@ -71,6 +72,7 @@ app.get('/all', async (req, res) => {
   });
   
 });
+
 
 app.listen(4000, () => console.log('Server Listenning on Port 3000'))
 
